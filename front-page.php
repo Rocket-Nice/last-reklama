@@ -1,4 +1,4 @@
-<?php get_header(); 
+<?php get_header();
 // Добавляем данные каждой записи в массив
 $elementsListContact[] = array(
     'coords' => get_field('contact_coordinate', 57),
@@ -230,7 +230,7 @@ $elementsListContact[] = array(
                                         //     'taxonomy' => 'map_street',
                                         //     'hide_empty' => false,
                                         // ));
-                                        $address_indoor = get_terms_by_post_type( array('map_street'), array('indoor'));
+                                        $address_indoor = get_terms_by_post_type(array('map_street'), array('indoor'));
 
                                         if (!empty($address_indoor) && !is_wp_error($address_indoor)) : ?>
                                             <?php foreach ($address_indoor as $address) : ?>
@@ -581,8 +581,8 @@ $elementsListContact[] = array(
 
                     <a class="article__link-end" href="/news">перейти ко всем статьям блога</a>
                 </div>
-                
-                 <div class="map">
+
+                <div class="map">
                     <div class="map__contact">
                         <h2>контакты</h2>
 
@@ -613,7 +613,6 @@ $elementsListContact[] = array(
     </section>
 </main>
 <script>
-    
     document.addEventListener('DOMContentLoaded', function() {
 
         // Получение всех радио-кнопок для выбора типа объекта
@@ -1033,12 +1032,12 @@ $elementsListContact[] = array(
 
                 // Создаем собственный макет с информацией о выбранном геообъекте.
                 let customBalloonContentLayout = ymaps.templateLayoutFactory.createClass([
-                        '<ul class=list>',
-                        // Выводим в цикле список всех геообъектов.
-                        '{% for geoObject in properties.geoObjects %}',
-                            '<li><a href=# data-placemarkid="{{ geoObject.properties.placemarkId }}" class="list_item">{{ geoObject.properties.balloonContentHeader|raw }}</a></li>',
-                        '{% endfor %}',
-                        '</ul>'
+                    '<ul class=list>',
+                    // Выводим в цикле список всех геообъектов.
+                    '{% for geoObject in properties.geoObjects %}',
+                    '<li><a href=# data-placemarkid="{{ geoObject.properties.placemarkId }}" class="list_item">{{ geoObject.properties.balloonContentHeader|raw }}</a></li>',
+                    '{% endfor %}',
+                    '</ul>'
                 ].join(''));
 
                 // Инициализация кластеризатора с заданными параметрами
@@ -1216,7 +1215,7 @@ $elementsListContact[] = array(
 
                 // function measureFun(button) {
                 //     button.classList.add("active");
-                //     // Симулируем клик по встроенной кнопке измерения расстояния
+                //     // Симулируем клик по встроенной кнопке измерения расстояния1
                 //     var ymapsFloatButton = document.querySelector('.ymaps-2-1-79-float-button');
                 //     if (ymapsFloatButton) {
                 //         ymapsFloatButton.click(); // Вызываем клик на встроенной кнопке
@@ -1224,6 +1223,7 @@ $elementsListContact[] = array(
                 // }
             });
         }
+
         function initializeMapContact() {
             // Ждем, пока API Яндекс.Карт станет доступен
             ymaps.ready(function() {
